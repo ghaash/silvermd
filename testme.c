@@ -6,8 +6,8 @@
 char inputChar()
 {
     // TODO: rewrite this function <-- you mean write
-    //the numbers of characters you can print in ASCII are 32 to 127, I did some asking around and this is how you would randomize it for the correct number of ASCII characters
-    char randomCharacters = rand() % (128-32) + 32;
+    //the numbers of characters you can print in ASCII are 32 to 128, this is how you randomize it for c in the testme() function
+    char randomCharacters = rand() % (126-32) + 32;
     return randomCharacters;
 }
 
@@ -15,17 +15,17 @@ char *inputString()
 {
     // TODO: rewrite this function <-- you mean write
     //create a string of random length
-    int stringLength = rand() % (15-3) + 3;
-    char *randomString = malloc(stringLength * sizeof(char));
+    char *randomString = malloc(6 *sizeof(char));
+    int index = 0;
 
-    //have the array be filled with characters
-    int index;
-    int randomCharacters;
-    for(index = 0; index < (stringLength - 1); index++) {
-      randomCharacters = inputChar();
-      randomString[index] = randomCharacters;
+    char randomCharacters[] = {'r', 'e', 's', 't', '\0'};
+
+    //this loop loops 7 times to make a string from random characters r, e, s, t and a terminating null
+    for(index = 0; index < 6; index++)
+    {
+        randomString[index] = randomCharacters[rand() % 5];
     }
-    randomString[stringLength] = '\0';
+
     return randomString;
 }
 
