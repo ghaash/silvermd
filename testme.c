@@ -6,7 +6,7 @@
 char inputChar()
 {
     // TODO: rewrite this function <-- you mean write
-    //the numbers of characters you can print in ASCII are 32 to 128, this is how you randomize it for c in the testme() function
+    //the numbers of characters you can print in ASCII are 32 to 126, this is how you randomize it for c in the testme() function
     char randomCharacters = rand() % (126-32) + 32;
     return randomCharacters;
 }
@@ -20,7 +20,7 @@ char *inputString()
 
     char randomCharacters[] = {'r', 'e', 's', 't', '\0'};
 
-    //this loop loops 7 times to make a string from random characters r, e, s, t and a terminating null
+    //this loop loops 6 times to make a string from random characters r, e, s, t and a terminating null
     for(index = 0; index < 6; index++)
     {
         randomString[index] = randomCharacters[rand() % 5];
